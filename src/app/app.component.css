@@ -1,0 +1,14 @@
+
+.logo{
+	height: 35px;
+	display: inline;
+}
+
+header{
+	background:#1B4965;
+	text-align: center;
+	padding: 7.5px
+}
+form{
+	margin: 1% 25%
+}
