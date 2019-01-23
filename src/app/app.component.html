@@ -13,21 +13,17 @@
 		</div>
 	</form>
 	<table class="table table-striped">
-		<tr *ngFor="let task of tasks"> <span [ngClass]="{strike: task.strike}">{{task.name}}</span>
-      		<td>
-      			<button class="btn btn-success" (click)="strikeTask(task)">
+		<tr *ngFor="let task of tasks"> 
+			<td [ngClass]="{'strike': task.strike}">{{task.name}}</td>
+      	
+      		<td class="btn-group">
+      			<button class="btn btn-link" (click)="strikeTask(task)">
         			<span class="fas fa-check"></span>
       			</button>
-      		</td>
-     		 
-     		<td>
-     			<button class="btn btn-info" (click)="editTask(task)">
+     			<button class="btn btn-link" (click)="editTask(task)">
       		  		<span class="fas fa-pencil-alt"></span>
       			</button>
-      		</td> 
-      		
-      		<td>
-      			<button class="btn btn-danger" (click)="deleteTask(task)">
+      			<button class="btn btn-link" (click)="deleteTask(task)">
       		 		<span class="fas fa-trash-alt"></span>
       			</button>
       		</td>

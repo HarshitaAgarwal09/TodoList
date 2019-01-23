@@ -14,12 +14,13 @@ export class TaskService {
   }
 
   addTask(task){
-  	if(task.id == 0) {
-  		this.tasks.push({id:(new Date()).getTime(),name:task.name,strike:false});
+  	if(task.id == 0 && task.name!="") {
+  	  	this.tasks.push({id:(new Date()).getTime(),name:task.name,strike:false});
   	}
   	else {
-  		this.editTask(task);
+  	  	this.editTask(task);
   	}
+  	  
   }
 
   editTask(task){
