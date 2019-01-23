@@ -1,12 +1,36 @@
+<header>
+  		<img class="logo" src=".\assets\LOGO.png">
+	</header>
+
 <div id="container">
-	<header>
-  <img class="logo" src=".\assets\LOGO.png">
-</header>
-<form>
-	<div class="input-group">
-	<input type="text" name = "task" class="form-control">
-	<button class="input-group-btn btn btn-primary "><span class="fas fa-plus"></span>
-		</button>
-	</div>
-</form>
+	
+	<form #TaskList="ngForm">
+		<div class="input-group">
+			<input type="text" name = "task" class="form-control"[(ngModel)]="task.name" >
+			<button class="input-group-btn btn btn-primary" (click)="onClick()">
+				<span class="fas fa-plus"></span>
+			</button>
+		</div>
+	</form>
+	<table class="table table-striped">
+		<tr *ngFor="let task of tasks"> <span [ngClass]="{strike: task.strike}">{{task.name}}</span>
+      		<td>
+      			<button class="btn btn-success" (click)="strikeTask(task)">
+        			<span class="fas fa-check"></span>
+      			</button>
+      		</td>
+     		 
+     		<td>
+     			<button class="btn btn-info" (click)="editTask(task)">
+      		  		<span class="fas fa-pencil-alt"></span>
+      			</button>
+      		</td> 
+      		
+      		<td>
+      			<button class="btn btn-danger" (click)="deleteTask(task)">
+      		 		<span class="fas fa-trash-alt"></span>
+      			</button>
+      		</td>
+  		</tr>
+  	</table>
 </div>
