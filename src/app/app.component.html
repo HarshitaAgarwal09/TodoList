@@ -1,6 +1,6 @@
 <header>
-  		<img class="logo" src=".\assets\LOGO.png">
-	</header>
+	<img class="logo" src=".\assets\LOGO.png">
+</header>
 
 <div id="container">
 	
@@ -12,10 +12,11 @@
 			</button>
 		</div>
 	</form>
+
 	<table class="table table-striped">
 		<tr *ngFor="let task of tasks"> 
-			<td [ngClass]="{'strike': task.strike}">{{task.name}}</td>
-      	
+			<td [ngClass]="{'strike': task.strike}">{{task.name}}
+			</td>      	
       		<td class="btn-group">
       			<button class="btn btn-link" (click)="strikeTask(task)">
         			<span class="fas fa-check"></span>
